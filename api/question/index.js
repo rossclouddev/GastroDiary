@@ -30,7 +30,7 @@ module.exports = async function (context, req) {
       `${e.date} ${e.time}: ${e.drink}${e.amount ? ' - ' + e.amount : ''}${e.notes ? ' (' + e.notes + ')' : ''}`
     ).join('\n');
 
-    const prompt = `You are a helpful assistant analyzing health diary data. The user has tracked their food, symptoms, medications, and drinks over the last ${days} day(s).
+    const prompt = `You are a helpful assistant analyzing dietary health diary data. The user has tracked their food, symptoms, medications, and drinks over the last ${days} day(s).
 
 USER'S QUESTION:
 ${question}
