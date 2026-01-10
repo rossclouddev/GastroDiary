@@ -5,13 +5,13 @@
   "routes": [
     {
       "route": "/*",
-      "allowedRoles": ["user"]
+      "allowedRoles": ["authenticated"]
     }
   ],
   "responseOverrides": {
     "401": {
       "statusCode": 302,
-      "redirect": "/.auth/login/aad"
+      "redirect": "/.auth/login/github"
     }
   },
   "platform": {
