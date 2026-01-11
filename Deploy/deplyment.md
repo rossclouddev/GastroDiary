@@ -56,23 +56,30 @@ cd health-diary
 - ✅ Set environment variables
 - ✅ Deploy your application
 
-### Step 4: Configure Authentication (2 minutes)
+### Step 4: Configure Authentication (1 minute)
 
-After deployment completes:
+After deployment completes, enable GitHub login:
 
-1. Open the Azure Portal link shown in the script output
-2. Go to your Static Web App → **Authentication**
-3. Select **"Simple"** mode
-4. Choose **"Entra ID"** (for Microsoft accounts) or **"GitHub"**
-5. Click **Save**
+1. Go to Azure Portal → Your Static Web App → **Authentication**
+2. Click **"Add identity provider"**
+3. Select **"GitHub"**
+4. Click **Save**
 
-### Step 5: Invite Users
+**Done!** Anyone with a GitHub account can now log in and use your app.
 
-1. In Azure Portal → Your Static Web App → **Role management**
+> **Note:** Azure automatically creates a GitHub OAuth app for you. No GitHub app registration needed!
+
+### Optional: Restrict to Specific Users
+
+By default, any GitHub user can log in. To restrict access:
+
+1. Azure Portal → Your Static Web App → **Role management**
 2. Click **Invite**
-3. Enter email address
-4. Role: `user`
-5. Generate and send invite link
+3. Enter GitHub username or email
+4. Role: `authenticated`
+5. Send invite link
+
+Only invited users will be able to access the app.
 
 ## What Gets Created
 

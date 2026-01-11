@@ -1,70 +1,208 @@
-# Getting Started with Create React App
+# 📅 Gastro Diary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A personal health tracking application that helps you identify food triggers and patterns affecting your digestive health using AI-powered analysis.
 
-## Available Scripts
 
-In the project directory, you can run:
+## 🎯 What Is This?
 
-### `npm start`
+Gastro Diary is a web application designed for people suffering from digestive issues (IBS, food intolerances, stomach pain) who want to identify which foods are causing their symptoms. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Unlike simple food diaries, Health Diary uses **AI analysis** (powered by Claude from Anthropic) to spot patterns you might miss, such as:
+- Foods that correlate with symptoms appearing 2-6 hours later
+- Specific ingredient triggers
+- Severity patterns and time-based trends
+- Medication or supplement effects
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## ✨ Key Features
 
-### `npm test`
+### 📝 Comprehensive Tracking
+- **Food & Meals** - Log what you eat with timestamps and notes
+- **Symptoms** - Record symptom severity (1-10 scale) whenever they occur
+- **Medications** - Track medications and supplements with dosages
+- **Alcoholic Drinks** - Monitor alcohol consumption and amounts
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🤖 AI-Powered Insights
+- **Pattern Analysis** - Automatically identify foods that correlate with symptoms
+- **Time Delay Detection** - Spot when symptoms appear hours after eating
+- **Ask Questions** - Query your data: "Which foods contain dairy?" or "What did I eat before my worst symptoms?"
+- **Personalized Reports** - Get detailed analysis of the last 24 hours, 3 days, week, or month
 
-### `npm run build`
+### 📊 Data Organization
+- **Timeline View** - See all entries (food, symptoms, meds, drinks) chronologically
+- **Category Views** - Filter by type to focus on specific data
+- **Analysis History** - Review past AI insights and track progress
+- **Pagination** - Easy browsing with "Load More" for large datasets
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 🔐 Secure & Private
+- **GitHub Authentication** - Secure login with your GitHub account
+- **Azure Cloud Storage** - Your data stored safely in Azure Table Storage
+- **Personal Instance** - Each deployment is completely private to you
+- **No Data Sharing** - Your health data never leaves your Azure tenant
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Quick Start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Prerequisites
+- Azure account ([create free account](https://azure.microsoft.com/free/))
+- GitHub account ([sign up](https://github.com/join))
+- Anthropic API key ([get from Anthropic](https://console.anthropic.com/))
 
-### `npm run eject`
+### Deploy Your Own Instance
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. **Fork (Don't clone) this repository** to your GitHub account
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+2. **Get required credentials:**
+   - Azure Subscription ID (found in Azure Portal)
+   - GitHub Personal Access Token with `repo` scope ([create here](https://github.com/settings/tokens))
+   - Anthropic API key ([get here](https://console.anthropic.com/))
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. **Run the deployment script:**
+   ```powershell
+   .\deploy.ps1 `
+     -SubscriptionId "your-azure-subscription-id" `
+     -GitHubRepo "yourusername/health-diary" `
+     -GitHubToken "ghp_your_github_token" `
+     -AnthropicApiKey "sk-ant-your_anthropic_key"
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+4. **Enable authentication**:
+   - Go to Azure Portal → Your Static Web App → Authentication
+   - Add GitHub as identity provider
+   - Save
 
-## Learn More
+5. **Start tracking!**
+   - Visit your app URL (shown after deployment)
+   - Log in with GitHub
+   - Begin tracking your health journey
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+📖 **Full deployment guide:** See [DEPLOYMENT.md](./Deploy/deplyment.md) for detailed instructions.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 💡 How To Use
 
-### Code Splitting
+### Daily Tracking
+1. **Log meals** as you eat them (timestamp is automatic)
+2. **Log symptoms** whenever they occur - even hours later
+3. **Add notes** about portion sizes, preparation methods, or how you feel
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Getting Insights
+- **Analyze Patterns** button generates AI analysis of your data
+- Choose timeframe: 24 hours, 3 days, week, or month
+- Claude identifies correlations between foods and symptoms
 
-### Analyzing the Bundle Size
+### Asking Questions
+- Click **"Ask a Question"** to query your data
+- Examples:
+  - "Which of these foods contain gluten?"
+  - "What did I eat before my worst symptoms?"
+  - "How often did I take ibuprofen this week?"
+- Claude answers based on YOUR actual tracked data
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🎨 Screenshots
 
-### Making a Progressive Web App
+*Coming soon - feel free to contribute screenshots!*
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## 🏗️ Technology Stack
 
-### Advanced Configuration
+- **Frontend:** React, Tailwind CSS
+- **Backend:** Azure Functions (Node.js)
+- **Database:** Azure Table Storage
+- **AI:** Anthropic Claude API
+- **Hosting:** Azure Static Web Apps
+- **Auth:** GitHub OAuth
+- **CI/CD:** GitHub Actions (auto-configured)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 💰 Cost
 
-### Deployment
+Running your own instance costs approximately **£0.50/month** on Azure's free tier:
+- Azure Static Web App: Free (100 GB bandwidth/month)
+- Azure Storage: ~£0.02/month for typical usage
+- Azure Functions: Free (1M executions/month)
+- Anthropic API: Pay-per-use (~£0.10-0.50/month for moderate usage)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔒 Privacy & Security
 
-### `npm run build` fails to minify
+- **Your data is yours** - Stored in YOUR Azure account, not shared with anyone
+- **Secure authentication** - GitHub OAuth with automatic SSL/TLS
+- **No tracking** - No analytics, no telemetry, no third-party services
+- **Open source** - Audit the code yourself, no hidden functionality
+- **Compliant** - Deployed in Azure regions of your choice for data residency
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🤝 Contributing
+
+Contributions are welcome! This project is designed to help people manage their health.
+
+**Ideas for contributions:**
+- Additional tracking categories (sleep, exercise, stress)
+- Data export/import functionality
+- Visualization charts and graphs
+- Mobile app wrapper (React Native/Capacitor)
+- Multi-language support
+- Dark mode
+- Custom AI prompt templates
+
+Please open an issue first to discuss major changes.
+
+## 📝 Use Cases
+
+Perfect for people with:
+- **IBS (Irritable Bowel Syndrome)** - Track trigger foods
+- **Food Intolerances** - Identify problem ingredients
+- **GERD/Acid Reflux** - Monitor dietary patterns
+- **Celiac Disease** - Ensure gluten-free compliance
+- **Lactose Intolerance** - Track dairy consumption
+- **General Digestive Issues** - Understand what affects you
+
+## 🛠️ Development
+
+Want to modify the app for your needs?
+
+```bash
+# Clone your fork
+git clone https://github.com/yourusername/GastroDiary.git
+cd GastroDiary
+
+# Install dependencies
+npm install
+cd api && npm install && cd ..
+
+# Run locally
+npm start
+# API: cd api && func start
+
+# Build
+npm run build
+```
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) for full development setup.
+
+## ⚠️ Medical Disclaimer
+
+**This application is for tracking purposes only and is not medical advice.**
+
+- Always consult healthcare professionals for diagnosis and treatment
+- AI analysis is based on patterns in your data, not medical expertise
+- Do not make medical decisions based solely on this app
+- In case of severe symptoms, seek immediate medical attention
+
+
+## 🙏 Acknowledgments
+
+- **Anthropic** - For Claude AI API
+- **Microsoft Azure** - For Static Web Apps and cloud infrastructure
+- **React Community** - For the excellent framework and ecosystem
+- **Contributors** - Thank you to everyone who helps improve this project
+
+## 📧 Support
+
+- **Issues:** [GitHub Issues](https://github.com/yourusername/health-diary/issues)
+- **Discussions:** [GitHub Discussions](https://github.com/yourusername/health-diary/discussions)
+- **Documentation:** [DEPLOYMENT.md](DEPLOYMENT.md)
+
+---
+
+**Made with ❤️ for anyone on a health journey**
+
+If this app helps you, consider:
+- ⭐ Starring the repository
+- 🐛 Reporting bugs or suggesting features
+- 🤝 Contributing improvements
+- 📢 Sharing with others who might benefit
