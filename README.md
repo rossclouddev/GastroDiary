@@ -2,6 +2,7 @@
 
 A personal health tracking application that helps you identify food triggers and patterns affecting your digestive health using AI-powered analysis.
 
+Note: Most of this readme file was also AI generated. I've made a few changes but if you spot anything outrageous please let me know.
 
 ## 🎯 What Is This?
 
@@ -49,6 +50,7 @@ Unlike simple food diaries, Health Diary uses **AI analysis** (powered by Claude
 ### Deploy Your Own Instance
 
 1. **Fork (Don't clone) this repository** to your GitHub account
+   - If you clone you can still use it but you won't be able to use the automatic Github Action that gets created when you integrate the staticwebbap with Github.
 
 2. **Get required credentials:**
    - Azure Subscription ID (found in Azure Portal)
@@ -74,7 +76,7 @@ Unlike simple food diaries, Health Diary uses **AI analysis** (powered by Claude
    - Log in with GitHub
    - Begin tracking your health journey
 
-📖 **Full deployment guide:** See [DEPLOYMENT.md](./Deploy/deplyment.md) for detailed instructions.
+📖 **Full deployment guide:** See [DEPLOYMENT.md](./Deploy/deployment.md) for detailed instructions.
 
 ## 💡 How To Use
 
@@ -98,7 +100,7 @@ Unlike simple food diaries, Health Diary uses **AI analysis** (powered by Claude
 
 ## 🎨 Screenshots
 
-*Coming soon - feel free to contribute screenshots!*
+![alt text](image.png)
 
 ## 🏗️ Technology Stack
 
@@ -121,25 +123,15 @@ Running your own instance costs approximately **£0.50/month** on Azure's free t
 ## 🔒 Privacy & Security
 
 - **Your data is yours** - Stored in YOUR Azure account, not shared with anyone
-- **Secure authentication** - GitHub OAuth with automatic SSL/TLS
+- **Secure authentication** - GitHub OAuth or EntraID*** 
 - **No tracking** - No analytics, no telemetry, no third-party services
 - **Open source** - Audit the code yourself, no hidden functionality
-- **Compliant** - Deployed in Azure regions of your choice for data residency
+
+***Note that you need to Invite yourself to lock it down to just you. Otherwise anyone with an authenticated Github account (Or EntraID if you configured it will have access.)
 
 ## 🤝 Contributing
 
-Contributions are welcome! This project is designed to help people manage their health.
-
-**Ideas for contributions:**
-- Additional tracking categories (sleep, exercise, stress)
-- Data export/import functionality
-- Visualization charts and graphs
-- Mobile app wrapper (React Native/Capacitor)
-- Multi-language support
-- Dark mode
-- Custom AI prompt templates
-
-Please open an issue first to discuss major changes.
+I am not a developer in any sense and I used Claude.ai to generate the vast majority of the code here. Feel free to contribute but be gentle with me.
 
 ## 📝 Use Cases
 
@@ -186,20 +178,14 @@ See [DEPLOYMENT.md](DEPLOYMENT.md) for full development setup.
 
 ## 🙏 Acknowledgments
 
-- **Anthropic** - For Claude AI API
+- **Anthropic** - For Claude AI API (Me here, not AI IMHO, Claude.ai is better at writing code than anything else I've used.)
 - **Microsoft Azure** - For Static Web Apps and cloud infrastructure
 - **React Community** - For the excellent framework and ecosystem
-- **Contributors** - Thank you to everyone who helps improve this project
 
-## 📧 Support
-
-- **Issues:** [GitHub Issues](https://github.com/yourusername/health-diary/issues)
-- **Discussions:** [GitHub Discussions](https://github.com/yourusername/health-diary/discussions)
-- **Documentation:** [DEPLOYMENT.md](DEPLOYMENT.md)
 
 ---
 
-**Made with ❤️ for anyone on a health journey**
+**Made with ❤️ for anyone on a gut health journey**
 
 If this app helps you, consider:
 - ⭐ Starring the repository
